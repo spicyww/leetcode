@@ -1,12 +1,23 @@
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class Hotel {
+public class Hotel implements Serializable {
     private Room[][] room;
 
     public Hotel(){
         this.room = new Room[3][3];
         for(int i = 0; i<3;i++){
             for(int j = 0; j < 3; j++){
+                int[] number = new int[]{i, j};
+                room[i][j] = new Room(number, "normal", false);
+            }
+        }
+    }
+
+    public Hotel(int row, int col){
+        this.room = new Room[row][col];
+        for(int i = 0; i<row;i++){
+            for(int j = 0; j < col; j++){
                 int[] number = new int[]{i, j};
                 room[i][j] = new Room(number, "normal", false);
             }

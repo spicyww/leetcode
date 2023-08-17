@@ -1,4 +1,6 @@
-public class Room {
+import java.io.Serializable;
+
+public class Room implements Serializable {
     private int[] num;
     private boolean status;
     // normal good
